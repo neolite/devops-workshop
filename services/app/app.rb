@@ -1,4 +1,4 @@
-Bundler.require(:default)
+Bundler.require
 
 set :bind, '0.0.0.0'
 

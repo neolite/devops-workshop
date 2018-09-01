@@ -4,7 +4,7 @@ app:
 	docker-compose up
 
 app-setup: app-build
-	docker-compose run app bundle install --path vendor/bundle
+	docker-compose run app bundle install
 
 app-build:
 	docker-compose build
