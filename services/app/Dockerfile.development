@@ -1,0 +1,5 @@
+FROM ruby:2.5.1-slim
+ENV PROJECT_ROOT /usr/src/app
+WORKDIR $PROJECT_ROOT
+RUN gem install sinatra
+
