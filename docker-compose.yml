@@ -1,13 +1,25 @@
 version: "3.3"
 
 services:
+  nginx:
+    build:
+      context: services/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./services/nginx/nginx-workshop.conf:/etc/nginx/conf.d/nginx-workshop.conf"
+      - "./services/nginx/maintenance.html:/etc/nginx/html/maintenance.html"
+    depends_on:
+      - app
+
   app:
     build:
       context: services/app
       dockerfile: Dockerfile.development
     command: sh -c "ruby app.rb"
     ports:
-      - "8080:4567"
+      - "4567:4567"
     volumes:
       - "~/.bash_history:/.bash_history"
       - "./services/app:/usr/src/app:cached"
