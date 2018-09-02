@@ -2,3 +2,6 @@
 /services/app/.env
 .env
 /ansible/development.retry
+.terraform
+terraform.tfvars
+terrafrom.tfstate
