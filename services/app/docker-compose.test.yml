@@ -1,13 +1,14 @@
-version: '2'
-  services:
-    db: # if need
-      image: postgres
-      environment:
-        POSTGRES_USER: web
-    sut:
-      build:
-        context: .
-        dockerfile: Dockerfile.production
-      command: make test
-      depends_on:
-        - db
+version: "2"
+
+services:
+  db: # if need
+    image: postgres
+    environment:
+      POSTGRES_USER: web
+  sut:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    command: make test
+    depends_on:
+      - db
