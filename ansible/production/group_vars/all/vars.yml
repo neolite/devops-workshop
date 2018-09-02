@@ -1,2 +1,2 @@
-workshop_rails_env: production
+workshop_rack_env: production
 workshop_node_env: production
